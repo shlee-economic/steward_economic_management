@@ -9,13 +9,13 @@ def index():
 
 @app.route('/result', methods=['POST'])
 def result():
-    initial_investment = float(request.form['initial_investment'])
-    annual_return = float(request.form['annual_return'])
-    dividend_yield = float(request.form['dividend_yield'])
-    fee = float(request.form['fee'])
-    invest_fee = float(request.form['invest_fee'])
-    investment_period = int(request.form['investment_period'])
-    yearly_investment = float(request.form['yearly_investment'])
+    initial_investment = float(request.form['초기 투자금 (initial_investment)'])
+    annual_return = float(request.form['연간 수익률 (annual_return)'])
+    dividend_yield = float(request.form['연간 배당률 (dividend_yield)'])
+    fee = float(request.form['펀드 수수료 (fund fee)'])
+    invest_fee = float(request.form['매수 수수료 (invest_fee)'])
+    investment_period = int(request.form['투자 기간 (investment_period)'])
+    yearly_investment = float(request.form['연간 추가 투자금 (yearly_investment)'])
 
     total_profit_rate, total_original_investment, final_investment = calculate_investment(initial_investment, annual_return, dividend_yield, fee, invest_fee, investment_period, yearly_investment)
     
