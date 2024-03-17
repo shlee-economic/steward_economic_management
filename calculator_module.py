@@ -1,4 +1,4 @@
-def calculate_investment(initial_investment, annual_return, dividend_yield, fee, invest_fee, investment_period, yearly_investment):
+def calculate_investment(initial_investment, annual_return, dividend_yield, dividend_growthrate, fee, invest_fee, investment_period, yearly_investment):
   """
   투자 수익률 및 투자금 계산
 
@@ -6,6 +6,7 @@ def calculate_investment(initial_investment, annual_return, dividend_yield, fee,
     initial_investment: 초기 투자금액
     annual_return: 연간 수익률
     dividend_yield: 배당률
+    dividend_growthrate : 배당 성장률
     fee: 수수료
     investment_period: 투자 기간
     yearly_investment: 매년 추가 투자금액
@@ -37,6 +38,8 @@ def calculate_investment(initial_investment, annual_return, dividend_yield, fee,
     # 투자금
     original_investment = final_investment + yearly_investment
 
+    # 배당 성장
+    dividend_yield = dividend_yield + dividend_yield*dividend_growthrate
   
   total_original_investment = initial_investment + (yearly_investment*(investment_period-1))
 
