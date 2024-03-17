@@ -17,9 +17,13 @@ def result():
     investment_period = int(request.form['investment_period'])
     yearly_investment = float(request.form['yearly_investment'])
 
-    total_profit_rate, final_investment = calculate_investment(initial_investment, annual_return, dividend_yield, fee, invest_fee, investment_period, yearly_investment)
+    total_profit_rate, total_original_investment, final_investment = calculate_investment(initial_investment, annual_return, dividend_yield, fee, invest_fee, investment_period, yearly_investment)
+    
+    text_total_profit_rate = str("{:.0f}".format(total_profit_rate)) + "%"
+    text_total_original_investment = str("{:,.0f}".format(total_original_investment)) + "원"
+    text_final_investment = str("{:,.0f}".format(final_investment)) + "원"
 
-    return render_template('result.html', total_profit_rate=total_profit_rate, final_investment=final_investment)
+    return render_template('result.html', total_profit_rate=text_total_profit_rate, total_original_investment= text_total_original_investment, final_investment=text_final_investment)
 
 if __name__ == '__main__':
     app.run(debug=True)
