@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/result', methods=['POST'])
+@app.route('/result', methods=['GET', 'POST'])
 def result():
     initial_investment = float(request.form['initial_investment'])
     annual_return = float(request.form['annual_return'])
