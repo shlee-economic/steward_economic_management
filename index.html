@@ -1,0 +1,64 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Calculator</title>
+    <!-- Bootstrap CSS 링크 -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 스타일시트 -->
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/random');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container form-container">
+        <h1 class="text-center mb-4">Investment Calculator</h1>
+        <form action="/result" method="post">
+            <div class="form-group">
+                <label for="initial_investment">Initial Investment:</label>
+                <input type="text" class="form-control" name="initial_investment" required>
+            </div>
+            <div class="form-group">
+                <label for="annual_return">Annual Return (e.g., 0.05 for 5%):</label>
+                <input type="text" class="form-control" name="annual_return" required>
+            </div>
+            <div class="form-group">
+                <label for="dividend_yield">Dividend Yield (e.g., 0.03 for 3%):</label>
+                <input type="text" class="form-control" name="dividend_yield" required>
+            </div>
+            <div class="form-group">
+                <label for="fee">Fund Fee (e.g., 0.001 for 0.1%):</label>
+                <input type="text" class="form-control" name="fee" required>
+            </div>
+            <div class="form-group">
+                <label for="invest_fee">Investment Fee (e.g., 0.000213):</label>
+                <input type="text" class="form-control" name="invest_fee" required>
+            </div>
+            <div class="form-group">
+                <label for="investment_period">Investment Period (in years):</label>
+                <input type="text" class="form-control" name="investment_period" required>
+            </div>
+            <div class="form-group">
+                <label for="yearly_investment">Yearly Investment:</label>
+                <input type="text" class="form-control" name="yearly_investment" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+        </form>
+    </div>
+</body>
+</html>
