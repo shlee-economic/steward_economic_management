@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/result.html/', methods=['POST'])
+@app.route('/', methods=['POST'])
 def result():
     if request.method == 'POST':
         initial_investment = float(request.form['initial_investment'])
