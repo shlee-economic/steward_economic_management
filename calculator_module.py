@@ -43,7 +43,7 @@ def calculate_investment(initial_investment, annual_return, dividend_yield, divi
   
   total_original_investment = initial_investment + (yearly_investment*(investment_period-1))
 
-  return ((final_investment-total_original_investment) / total_original_investment)*100.0, total_original_investment, final_investment
+  return ((final_investment-total_original_investment) / (total_original_investment))*100.0, total_original_investment, final_investment
 
 
 # def main():
